@@ -4,7 +4,8 @@ interface ProductProps{
   }
 }
 
-export default function Product({ params }: ProductProps) {
+export default async function Product({ params }: ProductProps) {
+  await new Promise(resolve => setTimeout(resolve, 2500))
   const [productId, size, color] = params.data  
   
   return (
