@@ -4,7 +4,7 @@ export default function LoginLayout
   return (
     <div>
       {children}
-      LoginLayout
+      <strong>LoginLayout</strong>
     </div>
   )
 }
