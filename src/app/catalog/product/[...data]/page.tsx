@@ -1,4 +1,5 @@
 import AddToCartButton from "./addToCartButton"
+import TestServerComponent from "./testServerComponent"
 
 interface ProductProps{
   params: {
@@ -15,7 +16,9 @@ export default async function Product({ params }: ProductProps) {
       <p>Product: {productId}</p>
       <p>Size: {size}</p>
       <p>Color: {color}</p>
-      <AddToCartButton/>
+      <AddToCartButton>
+        <TestServerComponent />
+      </AddToCartButton>
     </div>
   )
 }
