@@ -1,17 +1,22 @@
-
-interface UserData {
-  login: string;
-  id: number;
-}
+import { Suspense } from "react";
+import LongLoadingComponent from "./longLoadingComponent";
+import MainPageContent from "./mainPageContent";
 
 export default async function HomePage() {
-  await new Promise(resolve => setTimeout(resolve, 2500));
-  const userDataResponse = await fetch('https://api.github.com/users/lucasyule2212');
-  const userData = await userDataResponse.json() as UserData;
+ 
 
   return (
-    <pre>
-      {JSON.stringify(userData, null, 2)}
-    </pre>
-  );
+    <div>
+      <strong>
+        Catalog content: <br />
+      </strong>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, laboriosam! Cupiditate harum ducimus quis autem molestiae laborum voluptates voluptatem error fugiat in ad odio sed, aut consequuntur consequatur tempora cumque.</p>
+      <Suspense fallback={'Carregando LongLoadingComponent...'}>
+        <LongLoadingComponent/>
+      </Suspense>
+      <Suspense fallback={'Carregando MainPageContent...'}>
+        <MainPageContent />
+      </Suspense>
+    </div>
+  )
 }
