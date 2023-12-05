@@ -4,7 +4,7 @@ export default async function TestServerComponent() {
   return (
     <div>
       This is a
-      <strong>server component</strong>
+      <strong> server component </strong>
       rendered inside a Client Component
     </div>
   )
